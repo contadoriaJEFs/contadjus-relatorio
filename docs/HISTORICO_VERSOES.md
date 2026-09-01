@@ -2595,11 +2595,11 @@ Ajustes exclusivamente de apresentação: memória da Guia 5 ampliada na tela, c
 - Motores e funções de cálculo não alterados.
 
 
-## B107 — Paginação PDF definitiva
-- Rodapé institucional mantido como elemento HTML fixo por página.
-- Removido o posicionamento B106 que deslocava o rodapé para fora da folha.
-- Tabelas forçadas ao modelo nativo de impressão.
-- Linhas indivisíveis e cabeçalhos repetidos.
-- Resultado das Diferenças e Resultado da Atualização iniciam em página própria.
+## B107 — Correção cirúrgica da linha ciano / impressão
+- Base: B106.
+- Rodapé institucional mantido como elemento HTML fixo, com linha ciano contínua.
+- Removido o deslocamento `bottom: -18mm` introduzido na B106.
+- Linha ciano do totalizador da Guia 5 desenhada por um único pseudo-elemento, sem linha composta por células vazias.
+- Estruturas das tabelas mantidas como elementos nativos de tabela na impressão.
 - Nenhum tamanho de fonte alterado.
 - Motores e funções de cálculo não alterados.
