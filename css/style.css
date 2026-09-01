@@ -1,0 +1,461 @@
+/* ===== ESTILOS GERAIS ===== */
+@media print {
+    body { background: white; }
+    .no-print { display: none !important; }
+    .print-shadow { box-shadow: none !important; border: 1px solid #cbd5e1; }
+    .memoria-tabela th {
+        background: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .memoria-tabela .row-piso {
+        background: #fef3c7 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .memoria-tabela .row-teto {
+        background: #fee2e2 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .memoria-tabela td, .memoria-tabela th {
+        white-space: nowrap !important;
+    }
+    .identificacao-bloco {
+        border: 1px solid #cbd5e1 !important;
+        background: #f8fafc !important;
+    }
+    .guia-container .conteudo-guia {
+        display: none !important;
+    }
+    .guia-container .conteudo-guia.ativo {
+        display: block !important;
+    }
+    .guia-container .nav-guia {
+        display: none !important;
+    }
+
+    /* ---- Correção para o relatório ---- */
+    .guia-container .conteudo-guia#guia-relatorios {
+        display: none !important;
+    }
+    #relatorioImpressaoPortal {
+        display: block !important;
+    }
+    #previewRelatorio {
+        max-height: none !important;
+        overflow: visible !important;
+        background: white !important;
+        border: none !important;
+        padding: 20px !important;
+        font-size: 0.8rem !important;
+    }
+    #previewRelatorio .relatorio-item {
+        border-bottom: 1px solid #ccc !important;
+        page-break-inside: avoid;
+    }
+    #resumoRelatorio {
+        display: none !important;
+    }
+}
+
+/* ... (mantenha todos os estilos existentes até a seção de impressão) ... */
+
+/* ================================================================
+   IMPRESSÃO — somente o documento profissional.
+   ================================================================ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 28mm 12mm; /* Aumentei a margem inferior para 28mm */
+  }
+
+  html, body {
+      width: auto !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #fff !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      overflow: visible !important;
+  }
+
+  body > * { display: none !important; }
+  body > #relatorioImpressaoPortal {
+      display: block !important;
+      position: static !important;
+      width: auto !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #fff !important;
+  }
+
+  #relatorioImpressaoPortal.relatorio-documento {
+      display: block !important;
+      width: auto !important;
+      max-width: none !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 10pt !important;
+      line-height: 1.35 !important;
+      color: #1e293b !important;
+      background: #fff !important;
+  }
+
+  #relatorioImpressaoPortal .no-print { display: none !important; }
+
+  /* Cabeçalho */
+  #relatorioImpressaoPortal .documento-cabecalho {
+      display: grid !important;
+      grid-template-columns: 45mm minmax(0, 1fr) !important;
+      gap: 7mm !important;
+      align-items: center !important;
+      min-height: 28mm !important;
+      padding: 0 0 4mm !important;
+      margin: 0 0 4mm !important;
+      border-bottom: 1.4pt solid #00a8b5 !important;
+  }
+  #relatorioImpressaoPortal .marca-relatorio {
+      min-height: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+  }
+  #relatorioImpressaoPortal .logo-relatorio {
+      display: block !important;
+      width: 40mm !important;
+      max-width: 40mm !important;
+      height: auto !important;
+      max-height: 26mm !important;
+      object-fit: contain !important;
+      object-position: left center !important;
+  }
+  #relatorioImpressaoPortal .titulo-area-relatorio { text-align: right !important; }
+  #relatorioImpressaoPortal .titulo-documento {
+      font-size: 13pt !important;
+      line-height: 1.15 !important;
+      font-weight: 800 !important;
+      color: #002b66 !important;
+  }
+  #relatorioImpressaoPortal .subtitulo-documento {
+      margin-top: 1.2mm !important;
+      font-size: 8.5pt !important;
+      color: #475569 !important;
+  }
+  #relatorioImpressaoPortal .data-emissao {
+      margin-top: .8mm !important;
+      font-size: 7.5pt !important;
+      color: #64748b !important;
+  }
+
+  /* Identificação processual */
+  #relatorioImpressaoPortal .identificacao-relatorio {
+      margin: 0 0 5mm !important;
+      padding: 2.8mm 3.2mm !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 2mm 8mm !important;
+      border-left: 1.2mm solid #002b66 !important;
+      border-top: .5pt solid #e2e8f0 !important;
+      border-right: .5pt solid #e2e8f0 !important;
+      border-bottom: .5pt solid #e2e8f0 !important;
+      background: #f8fafc !important;
+      border-radius: 1px !important;
+  }
+  #relatorioImpressaoPortal .identificacao-relatorio div {
+      font-size: 9pt !important;
+      line-height: 1.3 !important;
+      color: #334155 !important;
+  }
+  #relatorioImpressaoPortal .identificacao-relatorio strong {
+      color: #0f172a !important;
+      font-weight: 800 !important;
+  }
+
+  #relatorioImpressaoPortal .secao-relatorio {
+      margin-top: 0 !important;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+  }
+  #relatorioImpressaoPortal .secao-relatorio h2 {
+      font-size: 11.5pt !important;
+      line-height: 1.2 !important;
+      color: #002b66 !important;
+      border-bottom: 1pt solid #00a8b5 !important;
+      padding-bottom: 1.5mm !important;
+      margin: 0 0 3mm !important;
+      font-weight: 800 !important;
+  }
+
+  #relatorioImpressaoPortal .quadro-resumo {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+      border: .6pt solid #cbd5e1 !important;
+      border-radius: 1px !important;
+      overflow: hidden !important;
+      margin: 0 0 2.5mm !important;
+  }
+  #relatorioImpressaoPortal .quadro-resumo .item {
+      padding: 2.4mm 2.8mm !important;
+      border-right: .5pt solid #e2e8f0 !important;
+  }
+  #relatorioImpressaoPortal .quadro-resumo .rotulo {
+      display: block !important;
+      font-size: 6.8pt !important;
+      line-height: 1.1 !important;
+      color: #64748b !important;
+      text-transform: uppercase !important;
+      font-weight: 700 !important;
+      letter-spacing: .15px !important;
+  }
+  #relatorioImpressaoPortal .quadro-resumo .valor {
+      display: block !important;
+      margin-top: 1mm !important;
+      font-size: 9.5pt !important;
+      line-height: 1.15 !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+  }
+
+  #relatorioImpressaoPortal .resultado-destaque {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 2.4mm 3mm !important;
+      margin: 0 0 4mm !important;
+      border: .7pt solid #9bd9df !important;
+      border-left: 1.2mm solid #00a8b5 !important;
+      background: #f0fdfa !important;
+      border-radius: 1px !important;
+  }
+  #relatorioImpressaoPortal .resultado-destaque .label {
+      font-size: 7.5pt !important;
+      color: #475569 !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: .15px !important;
+  }
+  #relatorioImpressaoPortal .resultado-destaque .valor {
+      font-size: 13pt !important;
+      line-height: 1 !important;
+      font-weight: 800 !important;
+      color: #002b66 !important;
+  }
+
+  #relatorioImpressaoPortal .memoria-titulo-relatorio {
+      margin: 0 0 2mm !important;
+      color: #002b66 !important;
+      font-size: 10.5pt !important;
+      line-height: 1.2 !important;
+      font-weight: 800 !important;
+      letter-spacing: .25px !important;
+      text-transform: uppercase !important;
+  }
+
+  /* ===== AJUSTE PRINCIPAL: redução de padding e line-height ===== */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio {
+      width: 100% !important;
+      max-width: 100% !important;
+      table-layout: fixed !important;
+      border-collapse: collapse !important;
+      font-size: 7.3pt !important;
+      margin: 0 0 2.5mm !important;
+      page-break-inside: auto !important;
+  }
+
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio th,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido th,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th {
+      background: #002b66 !important;
+      color: #fff !important;
+      padding: 1.5mm 0.8mm !important; /* reduzido */
+      border: .5pt solid #002b66 !important;
+      font-size: 6.6pt !important;
+      line-height: 1.05 !important;
+      text-transform: uppercase !important;
+      overflow-wrap: anywhere !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio td,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido td,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td {
+      padding: 1.2mm 0.6mm !important; /* reduzido de 1.8mm/1.2mm */
+      border: .5pt solid #cbd5e1 !important;
+      color: #1e293b !important;
+      font-size: 7.2pt !important;
+      line-height: 1.1 !important; /* reduzido de 1.15/1.2 */
+      overflow-wrap: anywhere !important;
+      white-space: nowrap !important; /* evita quebras de linha desnecessárias */
+  }
+
+  /* Para colunas numéricas, garantimos nowrap e alinhamento */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio td.num,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido td.num,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td.num,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td.num {
+      text-align: right !important;
+      white-space: nowrap !important;
+  }
+
+  /* Zebra das tabelas */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio tbody tr:nth-child(even) td,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido tbody tr:nth-child(even) td,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio tbody tr:nth-child(even) td,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tbody tr:nth-child(even) td {
+      background: #f1f5f9 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+
+  /* Última coluna com destaque */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio td:last-child,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido td:last-child {
+      font-weight: 700 !important;
+      color: #002b66 !important;
+  }
+
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td.destaque-diferenca {
+      font-weight: 700 !important;
+      color: #002b66 !important;
+  }
+
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td.total {
+      font-weight: 700 !important;
+      color: #002b66 !important;
+  }
+
+  /* Rodapé institucional – ajustado para não sobrepor */
+  #relatorioImpressaoPortal .rodape-institucional {
+      display: flex !important;
+      position: fixed !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      height: auto !important;
+      min-height: 6mm !important;
+      padding: 2mm 0 1mm 0 !important;
+      margin: 0 !important;
+      border-top: 1px solid #00a8b5 !important;
+      color: #008080 !important;
+      background: #fff !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 7.5pt !important;
+      line-height: 1 !important;
+      z-index: 9999 !important;
+  }
+
+  /* Ajuste para os blocos de atualização e diferenças */
+  #relatorioImpressaoPortal .tabela-atualizacao-totalizador,
+  #relatorioImpressaoPortal .quadro-totais-atualizacao,
+  #relatorioImpressaoPortal .quadro-totais-diferencas {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+  }
+
+  /* Notas e rodapés de seção */
+  #relatorioImpressaoPortal .nota-relatorio,
+  #relatorioImpressaoPortal .rodape-diferencas-relatorio {
+      font-size: 7.5pt !important;
+      line-height: 1.2 !important;
+      color: #64748b !important;
+      margin: 0 !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+  }
+
+  /* Força o cabeçalho da tabela a repetir em novas páginas */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio thead,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido thead,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio thead,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio thead {
+      display: table-header-group !important;
+  }
+
+  /* Cada linha deve ser indivisível */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio tbody tr,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido tbody tr,
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio tbody tr,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tbody tr {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+  }
+
+  /* Ajuste fino para a Guia 5 (atualização) com 11 colunas */
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(1),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(1) { width: 7% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(2),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(2) { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(3),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(3) { width: 9% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(4),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(4) { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(5),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(5) { width: 8% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(6),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(6) { width: 9% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(7),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(7) { width: 9% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(8),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(8) { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(9),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(9) { width: 8% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(10),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(10) { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th:nth-child(11),
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td:nth-child(11) { width: 10% !important; }
+
+  /* Guia 4 (6 colunas) */
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th:nth-child(1),
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td:nth-child(1) { width: 11% !important; }
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th:nth-child(2),
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td:nth-child(2) { width: 18% !important; }
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th:nth-child(3),
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td:nth-child(3) { width: 22% !important; }
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th:nth-child(4),
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td:nth-child(4) { width: 15% !important; }
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th:nth-child(5),
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td:nth-child(5) { width: 19% !important; }
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th:nth-child(6),
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td:nth-child(6) { width: 15% !important; }
+
+  /* Guia 2 e 3 (9 colunas) */
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-competencia { width: 8% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-tipo { width: 12% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-indice { width: 8% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-salario { width: 12% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-teto { width: 12% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-status { width: 8% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-teorico { width: 11% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-evoluido { width: 11% !important; }
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-final { width: 18% !important; }
+
+  /* Benefícios recebidos (10 colunas) */
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-competencia { width: 7% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-tipo { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-indice { width: 7% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-salario { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-teto { width: 10% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-indice-teto { width: 8% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-status { width: 7% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-teorico { width: 11% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-evoluido { width: 11% !important; }
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido col.col-final { width: 19% !important; }
+}
+
+/* ===== FIM DA SEÇÃO DE IMPRESSÃO ===== */
+/* (Restante do arquivo permanece inalterado) */
