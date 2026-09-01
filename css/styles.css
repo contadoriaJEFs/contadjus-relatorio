@@ -2835,3 +2835,55 @@
       margin-bottom: 2mm !important;
   }
 }
+
+
+/* B105 — ajuste exclusivamente vertical do rodapé/PDF.
+   Regra de ouro: os tamanhos tipográficos existentes são preservados. */
+@media print {
+    .relatorio-footer,
+    .relatorio-rodape,
+    .pdf-footer,
+    footer.relatorio-footer {
+        bottom: 8mm !important;
+        margin-bottom: 0 !important;
+        position: fixed !important;
+    }
+
+    .relatorio-print-page,
+    .relatorio-pagina,
+    .pdf-page,
+    .relatorio-documento {
+        box-sizing: border-box;
+    }
+
+    table {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    thead {
+        display: table-header-group !important;
+    }
+
+    tbody {
+        display: table-row-group !important;
+    }
+
+    tr {
+        display: table-row !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    th,
+    td {
+        display: table-cell !important;
+    }
+
+    .relatorio-observacao,
+    .relatorio-nota,
+    .observacao-relatorio {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+}

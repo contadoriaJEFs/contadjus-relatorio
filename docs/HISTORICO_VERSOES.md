@@ -2577,3 +2577,10 @@ Ajustes exclusivamente de apresentação: memória da Guia 5 ampliada na tela, c
 - Totalizadores preservados com R$ e negrito.
 - Diferença Devida permanece azul e sem negrito.
 - Motores e funções de cálculo preservados.
+
+
+## B105 — Ajuste vertical do rodapé/PDF
+- Rodapé reposicionado próximo à borda inferior.
+- Linhas de tabela permanecem indivisíveis.
+- Nenhuma regra de tamanho tipográfico foi criada ou alterada nesta versão.
+- Motores e funções de cálculo não alterados.

@@ -1,3 +1,7 @@
+# ContadJus B105
+
+Ajuste exclusivamente vertical de paginação e rodapé do PDF. Os tamanhos tipográficos existentes foram preservados.
+
 
 > **Versão B102:** ajuste final de paginação do PDF e aumento exclusivo da tabela de Diferenças na visualização em tela. Motores de cálculo preservados.
 # ContadJus B97
