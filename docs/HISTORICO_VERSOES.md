@@ -2593,3 +2593,13 @@ Ajustes exclusivamente de apresentação: memória da Guia 5 ampliada na tela, c
 - Mantida a área de segurança inferior para impedir sobreposição das tabelas.
 - Mantida a quebra integral das linhas das tabelas.
 - Motores e funções de cálculo não alterados.
+
+
+## B107 — Paginação PDF definitiva
+- Rodapé institucional mantido como elemento HTML fixo por página.
+- Removido o posicionamento B106 que deslocava o rodapé para fora da folha.
+- Tabelas forçadas ao modelo nativo de impressão.
+- Linhas indivisíveis e cabeçalhos repetidos.
+- Resultado das Diferenças e Resultado da Atualização iniciam em página própria.
+- Nenhum tamanho de fonte alterado.
+- Motores e funções de cálculo não alterados.
