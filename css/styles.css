@@ -2907,3 +2907,11 @@
         page-break-inside: avoid !important;
     }
 }
+
+
+/* Ajuste solicitado: texto institucional 3 cm abaixo da posição anterior. */
+@media print {
+    #relatorioImpressaoPortal .rodape-institucional {
+        bottom: -30mm !important;
+    }
+}
