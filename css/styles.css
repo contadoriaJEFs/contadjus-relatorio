@@ -2837,53 +2837,21 @@
 }
 
 
-/* B105 — ajuste exclusivamente vertical do rodapé/PDF.
-   Regra de ouro: os tamanhos tipográficos existentes são preservados. */
+
+/* B106 — posicionamento final do rodapé institucional */
+/* Somente geometria vertical. Nenhum tamanho de fonte é alterado. */
 @media print {
-    .relatorio-footer,
-    .relatorio-rodape,
-    .pdf-footer,
-    footer.relatorio-footer {
-        bottom: 8mm !important;
-        margin-bottom: 0 !important;
-        position: fixed !important;
-    }
+  #relatorioImpressaoPortal .rodape-institucional {
+      bottom: -18mm !important;
+  }
 
-    .relatorio-print-page,
-    .relatorio-pagina,
-    .pdf-page,
-    .relatorio-documento {
-        box-sizing: border-box;
-    }
-
-    table {
-        break-inside: auto !important;
-        page-break-inside: auto !important;
-    }
-
-    thead {
-        display: table-header-group !important;
-    }
-
-    tbody {
-        display: table-row-group !important;
-    }
-
-    tr {
-        display: table-row !important;
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
-    }
-
-    th,
-    td {
-        display: table-cell !important;
-    }
-
-    .relatorio-observacao,
-    .relatorio-nota,
-    .observacao-relatorio {
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
-    }
+  /* Mantém a faixa de segurança antes do rodapé e a quebra integral
+     das linhas das tabelas. */
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio tr,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tr,
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio tr,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido tr {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+  }
 }

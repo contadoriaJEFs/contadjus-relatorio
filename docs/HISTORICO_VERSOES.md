@@ -2584,3 +2584,12 @@ Ajustes exclusivamente de apresentação: memória da Guia 5 ampliada na tela, c
 - Linhas de tabela permanecem indivisíveis.
 - Nenhuma regra de tamanho tipográfico foi criada ou alterada nesta versão.
 - Motores e funções de cálculo não alterados.
+
+
+## B106 — Posicionamento final do rodapé institucional
+- Ajuste exclusivamente vertical do conjunto linha ciano + identificação institucional.
+- Mantida a linha ciano original da identidade visual.
+- Mantido o tamanho das fontes da tela e do PDF.
+- Mantida a área de segurança inferior para impedir sobreposição das tabelas.
+- Mantida a quebra integral das linhas das tabelas.
+- Motores e funções de cálculo não alterados.
