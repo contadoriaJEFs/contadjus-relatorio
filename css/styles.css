@@ -2773,3 +2773,65 @@
       text-overflow: clip !important;
   }
 }
+
+/* =====================================================================
+   B104 — PAGINAÇÃO FINAL: RESGUARDO DO RODAPÉ + LINHAS MAIS COMPACTAS
+   Escopo estritamente de impressão. REGRA DE OURO: nenhum font-size é
+   alterado nesta versão, nem na tela nem no PDF.
+   ===================================================================== */
+@media print {
+  /* Mantém o rodapé institucional no extremo inferior da folha. */
+  #relatorioImpressaoPortal .rodape-institucional {
+      position: fixed !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      height: 7mm !important;
+      padding: 2mm 0 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+      border-top: 1px solid #00a8b5 !important;
+  }
+
+  /* Reserva uma faixa maior antes do rodapé. A margem é por página; a
+     linha institucional continua fixa no final da folha. */
+  @page {
+      size: A4 portrait;
+      margin: 10mm 12mm 28mm 12mm;
+  }
+
+  /* Compactação mínima das linhas, sem tocar na tipografia. */
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th,
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio th,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido th {
+      padding-top: 1.8mm !important;
+      padding-bottom: 1.8mm !important;
+  }
+
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td,
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio td,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido td {
+      padding-top: 1.7mm !important;
+      padding-bottom: 1.7mm !important;
+  }
+
+  /* Cada linha permanece indivisível: se não couber integralmente na área
+     útil, ela migra para a página seguinte. */
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio tr,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tr,
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio tr,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido tr {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+  }
+
+  /* A última linha não pode encostar no rodapé institucional. */
+  #relatorioImpressaoPortal table.tabela-diferencas-relatorio,
+  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio,
+  #relatorioImpressaoPortal table.tabela-evolucao-relatorio,
+  #relatorioImpressaoPortal table.tabela-beneficio-recebido {
+      margin-bottom: 2mm !important;
+  }
+}
