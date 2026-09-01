@@ -23,7 +23,7 @@ O documento final não expõe a arquitetura interna por Guias nem o termo "motor
 
 ## Rodapé
 Mantida a linha teal discreta e a identificação institucional:
-**ContadJus • Liquidação de Sentenças e Cálculos Judiciais**
+****
 
 ## Não alterado
 Nenhuma regra matemática, índice, motor de evolução, cálculo de benefício recebido ou cálculo de diferenças foi alterado.

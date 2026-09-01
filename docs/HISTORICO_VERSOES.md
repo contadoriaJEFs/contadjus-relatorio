@@ -56,7 +56,7 @@
 - Redistribuídas as larguras das colunas, preservando `Vlr. Teórico` e `Vlr. Evoluído` e ampliando o espaço de `Vlr. Final`.
 - Valores monetários finais impedidos de quebra de linha.
 - Guia 4 recebe pequeno ganho de respiro e legibilidade sem alteração de conteúdo ou cálculo.
-- Incluído rodapé institucional na impressão: `ContadJus • Liquidação de Sentenças e Cálculos Judiciais`.
+- Incluído rodapé institucional na impressão: ``.
 - Motores de cálculo, dados, JSON e regras preservados.
 
 # CONTADJUS — HISTÓRICO CONSOLIDADO DE VERSÕES
