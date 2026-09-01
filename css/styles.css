@@ -2838,140 +2838,58 @@
 
 
 
-
-
-/* =====================================================================
-   B107 — CORREÇÃO CIRÚRGICA DA LINHA CIANO / IMPRESSÃO
-   Escopo: somente apresentação do PDF.
-   REGRA DE OURO: nenhum tamanho de fonte é alterado.
-   Motores e funções de cálculo preservados.
-   ===================================================================== */
+/* B106 — posicionamento final do rodapé institucional */
+/* Somente geometria vertical. Nenhum tamanho de fonte é alterado. */
 @media print {
-  /*
-   * O rodapé institucional é HTML próprio e não um footer de biblioteca.
-   * Mantém uma única linha ciano contínua, fora do fluxo das tabelas.
-   */
   #relatorioImpressaoPortal .rodape-institucional {
-      display: block !important;
-      position: fixed !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      height: 7mm !important;
-      box-sizing: border-box !important;
-      margin: 0 !important;
-      padding: 2mm 0 0 !important;
-      border-top: 1px solid #00a8b5 !important;
-      background: #fff !important;
-      color: #008080 !important;
-      text-align: left !important;
-      z-index: 9999 !important;
+      bottom: -18mm !important;
   }
 
-  /*
-   * A linha ciano do totalizador da Guia 5 não é uma <tr> com várias <td>:
-   * o totalizador atual é um grid. Em vez de desenhar a linha através de
-   * células vazias, a linha passa a ser um único traço no contêiner.
-   */
-  #relatorioImpressaoPortal .tabela-atualizacao-totalizador {
-      border-top: 0 !important;
-      position: relative !important;
-  }
-
-  #relatorioImpressaoPortal .tabela-atualizacao-totalizador::before {
-      content: "" !important;
-      display: block !important;
-      position: absolute !important;
-      left: 0 !important;
-      right: 0 !important;
-      top: 0 !important;
-      height: 1.2px !important;
-      background: #00a8b5 !important;
-      pointer-events: none !important;
-  }
-
-  /*
-   * As estruturas de tabela permanecem nativas no PDF.
-   */
-  #relatorioImpressaoPortal table.tabela-diferencas-relatorio,
-  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio,
-  #relatorioImpressaoPortal table.tabela-evolucao-relatorio,
-  #relatorioImpressaoPortal table.tabela-beneficio-recebido {
-      display: table !important;
-      table-layout: fixed !important;
-  }
-
-  #relatorioImpressaoPortal table.tabela-diferencas-relatorio thead,
-  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio thead,
-  #relatorioImpressaoPortal table.tabela-evolucao-relatorio thead,
-  #relatorioImpressaoPortal table.tabela-beneficio-recebido thead {
-      display: table-header-group !important;
-  }
-
-  #relatorioImpressaoPortal table.tabela-diferencas-relatorio tbody,
-  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tbody,
-  #relatorioImpressaoPortal table.tabela-evolucao-relatorio tbody,
-  #relatorioImpressaoPortal table.tabela-beneficio-recebido tbody {
-      display: table-row-group !important;
-  }
-
+  /* Mantém a faixa de segurança antes do rodapé e a quebra integral
+     das linhas das tabelas. */
   #relatorioImpressaoPortal table.tabela-diferencas-relatorio tr,
   #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tr,
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio tr,
   #relatorioImpressaoPortal table.tabela-beneficio-recebido tr {
-      display: table-row !important;
       break-inside: avoid !important;
       page-break-inside: avoid !important;
-  }
-
-  #relatorioImpressaoPortal table.tabela-diferencas-relatorio th,
-  #relatorioImpressaoPortal table.tabela-diferencas-relatorio td,
-  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th,
-  #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td,
-  #relatorioImpressaoPortal table.tabela-evolucao-relatorio th,
-  #relatorioImpressaoPortal table.tabela-evolucao-relatorio td,
-  #relatorioImpressaoPortal table.tabela-beneficio-recebido th,
-  #relatorioImpressaoPortal table.tabela-beneficio-recebido td {
-      display: table-cell !important;
-  }
-
-  /*
-   * Não permitir que o fluxo de conteúdo ocupe a faixa inferior reservada
-   * ao rodapé. A @page já reserva 28mm; aqui reforçamos a separação dos
-   * grandes blocos sem alterar sua tipografia.
-   */
-  #relatorioImpressaoPortal .secao-relatorio {
-      break-inside: auto !important;
-      page-break-inside: auto !important;
-  }
-
-  #relatorioImpressaoPortal .tabela-diferencas-relatorio-wrap,
-  #relatorioImpressaoPortal .tabela-atualizacao-relatorio-wrap {
-      overflow: visible !important;
-      break-inside: auto !important;
-      page-break-inside: auto !important;
   }
 }
 
-/* B107 — somente a tela: nenhum tamanho de fonte é alterado nesta correção. */
 
-
-/* B108 — linha ciano estrutural por colspan */
-/* Somente estrutura visual da linha ciano; nenhuma tipografia é alterada. */
+/* B107 — ajuste final do fechamento das seções */
+/* Escopo exclusivo: impressão do relatório profissional.
+   Nenhum tamanho de fonte é definido ou alterado. */
 @media print {
-  .linha-separadora-ciano-celula {
-      display: table-cell !important;
-      height: 3px !important;
-      padding: 0 !important;
-      border: 0 !important;
-      border-bottom: 3px solid #00a8b5 !important;
-      background: transparent !important;
-  }
+    #relatorioImpressaoPortal .rodape-institucional {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 99999 !important;
+        box-sizing: border-box !important;
+        border-top: 1px solid #00a8b5 !important;
+    }
 
-  tr.linha-totais-ciano,
-  tr.linha-totais,
-  tr.totalizador {
-      page-break-inside: avoid !important;
-      break-inside: avoid !important;
-  }
+    #relatorioImpressaoPortal .rodape-diferencas-relatorio,
+    #relatorioImpressaoPortal .nota-relatorio {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    #relatorioImpressaoPortal .rodape-diferencas-relatorio {
+        margin-bottom: 1mm !important;
+    }
+
+    #relatorioImpressaoPortal table.tabela-diferencas-relatorio tr,
+    #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    #relatorioImpressaoPortal table.tabela-diferencas-relatorio tfoot,
+    #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tfoot {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
 }
