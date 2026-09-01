@@ -1366,7 +1366,6 @@
       height: auto !important;
       min-height: 6mm !important;
       padding: 2mm 0 1mm 0 !important;
-      border-top: 2px solid #00a8b5 !important; /* linha mais espessa e forçada */
       color: #008080 !important;
       background: #fff !important;
       justify-content: flex-start !important;
@@ -2015,7 +2014,6 @@
         bottom: 0 !important;
         height: 7mm !important;
         padding: 2mm 0 0 !important;
-        border-top: 1px solid #00a8b5 !important;
         color: #008080 !important;
         background: #fff !important;
         justify-content: flex-start !important;
@@ -2610,7 +2608,6 @@
       box-sizing: border-box !important;
       padding: 2mm 0 0 !important;
       margin: 0 !important;
-      border-top: 1px solid #00a8b5 !important;
       color: #008080 !important;
       background: #fff !important;
       justify-content: flex-start !important;
@@ -2812,7 +2809,6 @@
       padding: 2mm 0 0 !important;
       margin: 0 !important;
       box-sizing: border-box !important;
-      border-top: 1px solid #00a8b5 !important;
   }
 
   /* Reserva uma faixa maior antes do rodapé. A margem é por página; a
@@ -2887,7 +2883,6 @@
         bottom: 0 !important;
         z-index: 99999 !important;
         box-sizing: border-box !important;
-        border-top: 2px solid #00a8b5 !important; /* garantia extra */
     }
 
     #relatorioImpressaoPortal .rodape-diferencas-relatorio,
