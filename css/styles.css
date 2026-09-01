@@ -1112,7 +1112,7 @@
    A pré-visualização de tela não compartilha estes tamanhos.
    ================================================================ */
 @media print {
-  @page { size: A4 portrait; margin: 10mm 12mm 40mm 12mm; } /* margem inferior aumentada */
+  @page { size: A4 portrait; margin: 10mm 12mm 18mm 12mm; }
 
   html, body {
       width: auto !important;
@@ -1315,7 +1315,7 @@
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio th {
       background: #002b66 !important;
       color: #fff !important;
-      padding: 1.8mm 0.8mm !important; /* reduzido */
+      padding: 2.2mm 1.2mm !important;
       border: .5pt solid #002b66 !important;
       font-size: 6.6pt !important;
       line-height: 1.05 !important;
@@ -1325,13 +1325,12 @@
       print-color-adjust: exact !important;
   }
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio td {
-      padding: 1.2mm 0.6mm !important; /* reduzido */
+      padding: 2.1mm 1.2mm !important;
       border: .5pt solid #cbd5e1 !important;
       color: #1e293b !important;
       font-size: 7.2pt !important;
-      line-height: 1.1 !important; /* reduzido */
+      line-height: 1.15 !important;
       overflow-wrap: anywhere !important;
-      white-space: nowrap !important;
   }
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio tbody tr:nth-child(even) td {
       background: #f1f5f9 !important;
@@ -1355,26 +1354,6 @@
   }
   #relatorioImpressaoPortal thead { display: table-header-group !important; }
   #relatorioImpressaoPortal tr { page-break-inside: avoid !important; }
-
-  /* ---- RODAPÉ INSTITUCIONAL CORRIGIDO ---- */
-  #relatorioImpressaoPortal .rodape-institucional {
-      display: flex !important;
-      position: fixed !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      height: auto !important;
-      min-height: 6mm !important;
-      padding: 2mm 0 1mm 0 !important;
-      color: #008080 !important;
-      background: #fff !important;
-      justify-content: flex-start !important;
-      align-items: center !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 7.5pt !important;
-      line-height: 1 !important;
-      z-index: 9999 !important;
-  }
 }
 
 
@@ -2013,8 +1992,7 @@
         right: 0 !important;
         bottom: 0 !important;
         height: 7mm !important;
-        padding: 2mm 0 0 !important;
-        color: #008080 !important;
+        padding: 2mm 0 0 !important;color: #008080 !important;
         background: #fff !important;
         justify-content: flex-start !important;
         align-items: flex-start !important;
@@ -2607,8 +2585,7 @@
       height: 7mm !important;
       box-sizing: border-box !important;
       padding: 2mm 0 0 !important;
-      margin: 0 !important;
-      color: #008080 !important;
+      margin: 0 !important;color: #008080 !important;
       background: #fff !important;
       justify-content: flex-start !important;
       align-items: flex-start !important;
@@ -2808,8 +2785,7 @@
       height: 7mm !important;
       padding: 2mm 0 0 !important;
       margin: 0 !important;
-      box-sizing: border-box !important;
-  }
+      box-sizing: border-box !important;}
 
   /* Reserva uma faixa maior antes do rodapé. A margem é por página; a
      linha institucional continua fixa no final da folha. */
@@ -2854,11 +2830,13 @@
   }
 }
 
+
+
 /* B106 — posicionamento final do rodapé institucional */
 /* Somente geometria vertical. Nenhum tamanho de fonte é alterado. */
 @media print {
   #relatorioImpressaoPortal .rodape-institucional {
-      bottom: 0 !important; /* removido -18mm e colocado 0 */
+      bottom: -18mm !important;
   }
 
   /* Mantém a faixa de segurança antes do rodapé e a quebra integral
@@ -2872,6 +2850,7 @@
   }
 }
 
+
 /* B107 — ajuste final do fechamento das seções */
 /* Escopo exclusivo: impressão do relatório profissional.
    Nenhum tamanho de fonte é definido ou alterado. */
@@ -2882,8 +2861,7 @@
         right: 0 !important;
         bottom: 0 !important;
         z-index: 99999 !important;
-        box-sizing: border-box !important;
-    }
+        box-sizing: border-box !important;}
 
     #relatorioImpressaoPortal .rodape-diferencas-relatorio,
     #relatorioImpressaoPortal .nota-relatorio {
@@ -2909,9 +2887,10 @@
 }
 
 
-/* Ajuste solicitado: texto institucional 3 cm abaixo da posição anterior. */
+/* CONTADJUS — REMOÇÃO EXCLUSIVA DA LINHA CIANO */
+/* Somente a linha ciano do rodapé é removida. Todo o restante permanece. */
 @media print {
-    #relatorioImpressaoPortal .rodape-institucional {
-        bottom: -30mm !important;
-    }
+  #relatorioImpressaoPortal .rodape-institucional {
+      border-top: none !important;
+  }
 }

@@ -954,7 +954,7 @@ function imprimirRelatorioProfissional() {
     // B85 — rodapé institucional do documento impresso.
     const rodapeInstitucional = document.createElement('div');
     rodapeInstitucional.className = 'rodape-institucional';
-    rodapeInstitucional.textContent = '';
+    rodapeInstitucional.textContent = 'ContadJus • Liquidação de Sentenças e Cálculos Judiciais';
     portal.appendChild(rodapeInstitucional);
 
     document.body.appendChild(portal);

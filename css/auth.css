@@ -195,3 +195,11 @@
     width: min(100%, 285px);
   }
 }
+
+/* CONTADJUS — REMOÇÃO EXCLUSIVA DA LINHA CIANO */
+/* Somente a linha ciano do rodapé é removida. Todo o restante permanece. */
+@media print {
+  #relatorioImpressaoPortal .rodape-institucional {
+      border-top: none !important;
+  }
+}
