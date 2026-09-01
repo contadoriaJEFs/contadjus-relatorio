@@ -2954,3 +2954,24 @@
 }
 
 /* B107 — somente a tela: nenhum tamanho de fonte é alterado nesta correção. */
+
+
+/* B108 — linha ciano estrutural por colspan */
+/* Somente estrutura visual da linha ciano; nenhuma tipografia é alterada. */
+@media print {
+  .linha-separadora-ciano-celula {
+      display: table-cell !important;
+      height: 3px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-bottom: 3px solid #00a8b5 !important;
+      background: transparent !important;
+  }
+
+  tr.linha-totais-ciano,
+  tr.linha-totais,
+  tr.totalizador {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+  }
+}
